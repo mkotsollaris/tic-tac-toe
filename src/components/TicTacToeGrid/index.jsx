@@ -24,7 +24,7 @@ const StyledButton = styled.button`
     width: 5rem;
 `;
 
-export default () => {
+const TicTacToeGrid = () => {
 
     const { state, val, resetState, winner } = React.useContext(AppContext);
 
@@ -58,3 +58,5 @@ export default () => {
         </StyledDiv>
     </StyledDiv>
 }
+
+export default TicTacToeGrid;

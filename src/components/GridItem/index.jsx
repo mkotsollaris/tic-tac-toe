@@ -17,7 +17,7 @@ const Item = styled.div`
     color: ${props => props.hasWinner ? 'gray' : 'black'}
 `
 
-export default ({ row, col }) => {
+const GridItem = ({ row, col }) => {
 
     let { winner, state, callback } = React.useContext(AppContext);
 
@@ -41,3 +41,5 @@ export default ({ row, col }) => {
         </Item>
     </div >
 }
+
+export default GridItem;

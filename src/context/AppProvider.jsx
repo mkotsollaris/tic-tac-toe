@@ -1,8 +1,7 @@
 import React from 'react';
 import AppContext from './AppContext';
 
-
-export default ({ children }) => {
+const AppProvider = ({ children }) => {
 
     const [state, setState] = React.useState([new Array(3).fill(-1), new Array(3).fill(-1), new Array(3).fill(-1)]);
     const [val, setVal] = React.useState(1);
@@ -58,8 +57,8 @@ export default ({ children }) => {
     }
 
     const checkDiagonals = () => {
-        if (state[0][0] === val && state[1][1] === val && state[2][2] === val ||
-            state[0][2] === val && state[1][1] === val && state[2][0] === val) {
+        if ((state[0][0] === val && state[1][1] === val && state[2][2] === val) ||
+            (state[0][2] === val && state[1][1] === val && state[2][0] === val)) {
             return val;
         }
         return -1;
@@ -89,3 +88,5 @@ export default ({ children }) => {
         {children}
     </AppContext.Provider>
 }
+
+export default AppProvider;
