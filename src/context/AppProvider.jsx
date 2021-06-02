@@ -3,12 +3,14 @@ import AppContext from './AppContext';
 
 const AppProvider = ({ children }) => {
 
-    const [state, setState] = React.useState([new Array(3).fill(-1), new Array(3).fill(-1), new Array(3).fill(-1)]);
+    let getNewArray = () => [new Array(3).fill(-1), new Array(3).fill(-1), new Array(3).fill(-1)];
+
+    const [state, setState] = React.useState(getNewArray());
     const [val, setVal] = React.useState(1);
     const [winner, setWinner] = React.useState(-1);
 
     const resetState = () => {
-        setState([new Array(3).fill(-1), new Array(3).fill(-1), new Array(3).fill(-1)])
+        setState(getNewArray())
         setWinner(-1);
     }
 
