@@ -10,4 +10,4 @@
 
 ## Run tests
 
-`yarn test`
+`yarn test --watchAll`
